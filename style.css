@@ -1,0 +1,263 @@
+/* =========================
+   RESET & GLOBAL
+   Menghapus margin, padding, dan box-sizing default browser
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* scroll halus saat klik menu */
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f8f9fa;
+  min-height: 100%;
+}
+
+body.cart-open {
+  overflow: hidden; /* mencegah scroll saat keranjang terbuka */
+}
+
+/* =========================
+   LAYOUT UTAMA
+========================= */
+main {
+  flex: 1;
+}
+
+.section {
+  padding: 100px 20px;
+  margin-top: 80px; /* agar tidak ketutup navbar fixed */
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  backdrop-filter: blur(10px);
+}
+
+.nav-link {
+  color: #ccc !important;
+  transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #00ff44 !important;
+  font-weight: 500;
+}
+
+/* =========================
+   HERO (HALAMAN UTAMA)
+========================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url("img/ladang.012.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn-success {
+  background: linear-gradient(45deg, #28a745, #20c997);
+  border: none;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn-success:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   CARD GLOBAL
+========================= */
+.card {
+  border-radius: 12px;
+  transition: 0.3s;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+.product-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.4s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+}
+
+/* =========================
+   GAMBAR PRODUK
+========================= */
+.img-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-box img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.product-card:hover img {
+  transform: scale(1.1);
+}
+
+/* BADGE LABEL PRODUK */
+.img-box .badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+/* =========================
+   KONTEN PRODUK
+========================= */
+.content {
+  padding: 15px;
+  text-align: center;
+}
+
+.content h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.content p {
+  color: #555;
+}
+
+/* =========================
+   KERANJANG SIDEBAR (MODAL)
+========================= */
+.cart-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+/* Sidebar di kanan */
+.cart-content {
+  position: fixed;
+  top: 0;
+  right: -350px; /* sembunyi awal */
+  width: 320px;
+  height: 100%;
+  background: #fff;
+  padding: 20px;
+  transition: 0.4s;
+  z-index: 1000;
+  overflow-y: auto;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+}
+
+/* Saat sidebar aktif */
+.cart-content.active {
+  right: 0;
+}
+
+.cart-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-content li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+/* =========================
+   MAPS
+========================= */
+.map-container {
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   IMAGE GLOBAL
+========================= */
+img {
+  transition: 0.4s;
+}
+
+img:hover {
+  transform: scale(1.03);
+}
+
+/* =========================
+   TEXT
+========================= */
+h2 {
+  letter-spacing: 1px;
+}
+/* Pastikan html dan body mengambil tinggi penuh */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* mengatur layout vertikal */
+}
+
+/* Konten utama fleksibel */
+main {
+  flex: 1; /* main akan mengambil space yang tersisa */
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
